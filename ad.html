@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纷享呗</title>
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <link rel="shortcut icon" href="style/images/favicon.ico">
+    <link rel="stylesheet" href="style/css/jquery.fullPage.css" media="screen" />
+    <link rel="stylesheet" href="style/css/style.css" media="screen" />
+    <script src="style/js/jquery-1.8.3.min.js"></script>
+    <script src="style/js/jquery.easing.min.1.3.js"></script>
+    <script src="style/js/mlData.js"></script>
+    <!--[if lt IE 9]> <script src="style/js/css3-mediaqueries.js"></script>
+<script src="style/js/html5.js"></script> <![endif]-->
+</head>
+
+<body>
+    <!-- nav -->
+    <nav>
+        <h1>纷享呗-：国内领先的分享赚钱APP</h1>
+        <ul>
+        <ul>
+            <a href="#"><li class="current">MENU</li></a>
+            <a href="index.html"><li>首页</li></a>
+            <a href="ad.html"><li class="active">广告合作</li></a>
+            <a href="about.html"><li>关于我们</li></a>
+            <a href=""><li>广告主登录</li></a>
+            <a href="http://pkg.fir.im/5053713e0de7c4e747e0b6cd6779a825cc79867c.apk?attname=app-Official-release.apk_1.1.9.apk&e=1453192619&token=LOvmia8oXF4xnLh0IdH05XMYpH6ENHNpARlmPc-T:UnZ6nig0if-CismIcWK7HvtYDlo="><li>下载纷享呗</li></a>
+        </ul>
+    </nav>
+    <section>
+        <header class="ad">
+            <div>
+                <h2><strong>纷</strong>享呗</h2>
+		<p>由广州主题邦信息科技有限公司开发运营的国内领先社交媒体精准传播APP。</p>
+                <p>通过整合用户的社交资源以及广告主的传播需求，让用户主动将广告分享到</p>
+                <p>微信、QQ空间、微博等社交媒体，并获得一定奖励。从而帮助广告主低成</p>
+				<p>本得在社交媒体进行营销。</p>
+            </div>
+        </header>
+        <h3>我们的优势</h3>
+
+        <div class="tabbox">
+            <div class="tabmenu">
+                <ul>
+                    <li onmouseover="tabChange(this,'tabcontent')" class="cli"><span></span>提高广告可信度</li>
+                    <li onmouseover="tabChange(this,'tabcontent')"><span></span>精准投放</li>
+                    <li onmouseover="tabChange(this,'tabcontent')"><span></span>低成本</li>
+                    <li onmouseover="tabChange(this,'tabcontent')"><span></span>实时数据监控</li>
+                </ul>
+            </div>
+            <div id="tabcontent">
+                <div id="tabul">
+                    <h4>提高广告可信度</h4>
+                    <p>广告内容由用户分享到社交媒体</p>
+                    <p>有了用户做背书，大大提高了广告的可信度。</p>
+                </div>
+                <div class="hidden">
+                    <h4>精准投放</h4>
+                    <p>纷享呗拥有高效智能的广告投放系统，自选投放渠道，多维度锁定目标人群，直接抵达目标用户。</p>
+                    
+                </div>
+                <div class="hidden">
+                    <h4>低成本</h4>
+                    <p>分享广告按CPC计费，每阅读人次单价低至0.1元。</p>
+                    <p>关注广告按CPA计费，公众号关注成本低至0.5元。</p>
+                </div>
+                <div class="hidden">
+                    <h4>实时数据监控</h4>
+                    <p>及时数据反馈，实时调整，实现广告效果最优化面，</p>
+                    <p>多维度数据监控+异常人工审查，有效防止恶意点击刷量。</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>可选渠道</h3>
+
+        <div class="img-scroll">
+            <div class="img-list">
+                <ul id="ad-cp-icons">
+                    <!-- append icons of ad-cooperations here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- /scroll-->
+
+
+    </section>
+
+    <footer>©2015 主题邦 ALL Right Reserved.粤ICP备15081885号</footer>
+
+    <script>
+        function tabChange(obj, id) {
+            var arrayli = obj.parentNode.getElementsByTagName("li");
+            var arraydiv = document.getElementById(id).getElementsByTagName("div");
+            for (i = 0; i < arraydiv.length; i++) {
+                if (obj == arrayli[i]) {
+                    arrayli[i].className = "cli";
+                    arraydiv[i].className = "";
+                } else {
+                    arrayli[i].className = "";
+                    arraydiv[i].className = "hidden";
+                }
+            }
+        }
+    </script>
+    <script>
+        // fill data from server
+        (function() {'use strict';
+            function DY_scroll(wraper, prev, next, img, speed, or) {
+                var wraper = $(wraper);
+                var prev = $(prev);
+                var next = $(next);
+                var img = $(img).find('ul');
+                var w = img.find('li').outerWidth(true);
+                var s = speed;
+                var ad;
+                next.click(function() {
+                    img.animate({
+                        'margin-left': -w
+                    }, function() {
+                        img.find('li').eq(0).appendTo(img);
+                        img.css({
+                            'margin-left': 0
+                        });
+                    });
+                });
+                prev.click(function() {
+                    img.find('li:last').prependTo(img);
+                    img.css({
+                        'margin-left': -w
+                    });
+                    img.animate({
+                        'margin-left': 0
+                    });
+                });
+                if (or == true) {
+                    ad = setInterval(function() {
+                        next.click();
+                    }, s * 1000);
+                    wraper.hover(function() {
+                        clearInterval(ad);
+                    }, function() {
+                        ad = setInterval(function() {
+                            next.click();
+                        }, s * 1000);
+                    });
+                }
+            }
+
+            var adCpIcons = $('#ad-cp-icons');
+            mlData.cooperation(function(data) {
+                $(function() {
+                    data.forEach(function(adCp) {
+                        adCpIcons.append($(String.format(
+                            '<li><a>' +
+                            '<img src="{iconUrl}" />' +
+                            '{title}' +
+                            '</a></li>',
+                            {
+                                iconUrl: mlData.imageUrl(style/images/img/adCp.icon.id),
+                                title: adCp.title
+                            }
+                        )));
+                    });
+                    DY_scroll('.img-scroll', '.prev', '.next', '.img-list', 2, true);
+                });
+            })
+        })();
+    </script>
+
+
+</body>
+
+</html>
